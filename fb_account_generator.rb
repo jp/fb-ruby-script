@@ -16,7 +16,7 @@ NB_USERS_TO_CREATE = 5
 i = 0
 while i < NB_USERS_TO_CREATE
   username = `rig | head -n 1`
-  path = "/#{APP_ID}/accounts/test-users?installed=true&name=#{username}&locale=en_US&permissions=read_stream&method=post&#{APP_ACCESS_TOKEN}"
+  path = "/#{APP_ID}/accounts/test-users?installed=true&name=#{username}&locale=en_US&permissions=read_stream&method=post&#{APP_ACCESS_TOKEN}".gsub("\n",'')
   puts path
 
   fbu = JSON.parse(get(path))
