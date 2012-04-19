@@ -10,7 +10,7 @@ APP_ACCESS_TOKEN = get(path)
 users_path = URI.escape("/#{APP_ID}/accounts/test-users?#{APP_ACCESS_TOKEN}")
 users = JSON.parse(get(users_path))
 
-users.each do |u|
+users["data"].each do |u|
   db_user = User.find_by_fb_id(u["id"])
   db_user.access_token = u["access_token"]
   db_user.save
