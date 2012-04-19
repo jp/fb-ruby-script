@@ -13,6 +13,9 @@ users = JSON.parse(get(users_path))
 users["data"].each do |u|
   db_user = User.find_by_fb_id(u["id"])
   if db_user
+    puts db_user.access_token
+    puts u["access_token"]
+
     db_user.access_token = u["access_token"]
     db_user.save
   end
