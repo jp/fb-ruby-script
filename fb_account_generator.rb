@@ -1,12 +1,7 @@
 #!/usr/bin/ruby -rubygems
-require 'active_record'
-require 'net/https'
-require 'json'
-require 'uri'
-
 require 'lib'
 
-NB_USERS_TO_CREATE = 5
+NB_USERS_TO_CREATE = 500
 
 
 

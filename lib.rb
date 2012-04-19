@@ -1,5 +1,10 @@
 require 'fb_secret'
 
+require 'active_record'
+require 'net/https'
+require 'json'
+require 'uri'
+
 ############ create sqlite db in memory ################
 
 DB_FILE = "fb_test_users.sqlite"
