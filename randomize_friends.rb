@@ -20,10 +20,10 @@ User.all.each do |user|
       rfid = random_friend.fb_id
       rfat = random_friend.access_token
 
-      friend_path = "https://graph.facebook.com/#{user.fb_id}/friends/#{rfid}?method=post&access_token=#{user.access_token}"
+      friend_path = "/#{user.fb_id}/friends/#{rfid}?method=post&access_token=#{user.access_token}"
       get(friend_path)
 
-      friend_path = "https://graph.facebook.com/#{rfid}/friends/#{user.fb_id}?method=post&access_token=#{rfat}"
+      friend_path = "/#{rfid}/friends/#{user.fb_id}?method=post&access_token=#{rfat}"
       get(friend_path)
 
       i+=1
