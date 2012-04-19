@@ -6,9 +6,7 @@ User.all.each do |user|
   if user.fb_id == nil
     user.destroy
   end
-  p user.id
-  p user.fb_id
-  p user.access_token
+  puts user.fb_id +","+ user.access_token
 
 end
 
