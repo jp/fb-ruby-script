@@ -9,6 +9,12 @@ require 'lib'
 NB_USERS_TO_CREATE = 5
 
 
+
+############ get app token ################
+path = "/oauth/access_token?client_id=#{APP_ID}&client_secret=#{APP_SECRET}&grant_type=client_credentials"
+APP_ACCESS_TOKEN = get(path)
+
+
 ############ create users ################
 
 

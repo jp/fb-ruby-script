@@ -41,8 +41,3 @@ def get(path)
 end
 
 
-############ get app token ################
-
-path = "/oauth/access_token?client_id=#{APP_ID}&client_secret=#{APP_SECRET}&grant_type=client_credentials"
-
-APP_ACCESS_TOKEN = get(path)
