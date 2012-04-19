@@ -12,7 +12,7 @@ ActiveRecord::Base.establish_connection(
 if !File.exists?(DB_FILE)
   ActiveRecord::Schema.define do
       create_table :users do |table|
-          table.column :id, :string
+          table.column :fb_id, :string
           table.column :access_token, :string
           table.column :login_url, :string
           table.column :email, :string

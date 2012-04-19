@@ -28,7 +28,7 @@ while i < NB_USERS_TO_CREATE
   fbu = JSON.parse(get(path))
 
   User.create(
-    :id => fbu["id"],
+    :fb_id => fbu["id"],
     :access_token => fbu["access_token"],
     :login_url => fbu["login_url"],
     :email => fbu["email"],

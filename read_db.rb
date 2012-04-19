@@ -8,6 +8,7 @@ require 'lib'
 
 User.all.each do |user|
 
-  p user.id
+  p user.fb_id
+  p user.access_token
 
 end
