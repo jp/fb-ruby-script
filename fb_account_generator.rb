@@ -22,7 +22,7 @@ while i < NB_USERS_TO_CREATE
     &locale=en_US
     &permissions=read_stream
     &method=post
-    &#{APP_ACCESS_TOKEN}".gsub('\n','')
+    &#{APP_ACCESS_TOKEN}".gsub("\n",'')
   puts path
 
   fbu = JSON.parse(get(path))
