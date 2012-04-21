@@ -16,6 +16,7 @@ This is a set of ruby scripts to manipulate facebook test users
 
 Use the CSV file as an input in JMeter
 Launch one (or more) JMeter server in an EC2 or RS instance
+
 Dig a tunnel between your network and the slaves network
 
 On the client edit jmeter.properties and add:
