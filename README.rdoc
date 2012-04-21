@@ -37,7 +37,7 @@ Thanks ionel >> http://ionelmc.wordpress.com/2012/02/16/how-to-run-jmeter-over-s
 
 == Warranty
 
-This software suite come with the warranty
+This software suite come with the warranty that you have to read the code
 
 == License
 
