@@ -5,8 +5,11 @@ This is a set of ruby scripts to manipulate facebook test users
 == How To
 
 1 - Generate test users
+
 2 - Randomize friendship
+
 3 - Save the output of read_db.rb in a CSV
+
 4 - Refresh database when some tokens expires, regenerate CSV
 
 == JMeter conf
