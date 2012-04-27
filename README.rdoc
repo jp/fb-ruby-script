@@ -34,7 +34,11 @@ On the server edit jmeter.properties and add:
 Dig the SSH tunnel
   ssh -L 55501:127.0.0.1:55501 -L 55511:127.0.0.1:55511 -R 55512:127.0.0.1:55512 user@hostname -N
 
-Thanks ionel >> http://ionelmc.wordpress.com/2012/02/16/how-to-run-jmeter-over-ssh-tunnel/
+
+Indicate internal and external IP went routing the inside out
+  server.rmi.localhostname=127.0.0.1
+  httpclient.localaddress=10.1.1.5
+
 
 == Warranty
 
