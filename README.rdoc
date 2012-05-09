@@ -1,16 +1,43 @@
 == About
 
-This is a set of ruby scripts to manipulate facebook test users	
+This is a set of ruby scripts to manipulate facebook test users	> https://developers.facebook.com/docs/test_users/
 
 == How To
 
-1 - Generate test users
+1 - Edit you app information
 
-2 - Randomize friendship
+The scripts are made for a single app. The app credentials are stored in the file fb_secret.rb.
+Just edit APP_ID and APP_SECRET to make them match to what should be inside.
 
-3 - Save the output of read_db.rb in a CSV
+2 - Generate test users
 
-4 - Refresh database when some tokens expires, regenerate CSV
+Edit fb_account_generator.rb to set NB_USERS_TO_CREATE.
+Default if 500 : this is what facebook allowed me to create on my first (and last) try.
+
+Note that RIG (Random Identity Generator) is used to generate the user names. Install with APT-GET or rig.sourceforge.net.
+
+RIG is giving some nice generated identities which is much better than having user001 to user500.
+
+Then run fb_account_generator.rb ... and wait for a "Error code: 2900 (Too many test accounts)"
+
+Each created account is stored in an SQLite database with a model defined in lib.rb.
+
+3 - Randomize friendship
+
+In the app I tested, I had to know if one user was a friend to another, in order to allow the access to some information.
+I also had to get the list of all the user's friends who already have an account in the app
+
+For each test user, the script randomize_friends.rb creates 10 to 100 connections with other test users.
+
+4 - Save the output of read_db.rb in a CSV to use as an input for JMeter
+
+./read_db.rb > fb_tokens.csv
+
+5 - Refresh database after tokens expiration, regenerate CSV
+
+The access_token is expiring like the login_url : regularly, after a badly documented delay (1 or 2 hours depending on the line of the fb doc).
+
+We can anyway refresh the tokens using the listing of all the test users associated to the application. The refresh.rb script is there to do the job.
 
 == JMeter conf
 
